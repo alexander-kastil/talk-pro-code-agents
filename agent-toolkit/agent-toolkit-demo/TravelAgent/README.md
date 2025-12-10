@@ -40,7 +40,7 @@ Travel Agent is a declarative agent using the Microsoft Agent Toolkit to assist 
 
 - Next we will use the Microsoft 365 Agents Toolkit MCP to be able to add some more advance configuration. In .vscode/mcp.json add:
 
-  ```
+  ```json
   {
       "servers": {
           "M365AgentsToolkit Server": {
@@ -71,3 +71,16 @@ Travel Agent is a declarative agent using the Microsoft Agent Toolkit to assist 
 - Now give me an overview about the capabilities. Provide a complete list of options and what functionality they provide.
 
 - I want to add this sharepoint library as knowledge https://integrationsonline.sharepoint.com/sites/copilot-demo/Sightseeing
+
+> Note: Should add the following to declarativeAgent.json
+
+```json
+{
+    "name": "OneDriveAndSharePoint",
+    "items_by_url": [
+        {
+            "url": "https://integrationsonline.sharepoint.com/sites/copilot-demo/Sightseeing"
+        }
+    ]
+}
+```
