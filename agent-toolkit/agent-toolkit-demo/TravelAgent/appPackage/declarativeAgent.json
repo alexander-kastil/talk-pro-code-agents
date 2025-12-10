@@ -7,7 +7,7 @@
     "conversation_starters": [
         {
             "title": "Vienna Trip",
-            "text": "Recommend places to visit in Vienna"
+            "text": "Recommend ten places to visit in Vienna"
         },
         {
             "title": "Lunch Options",
@@ -21,6 +21,14 @@
     "capabilities": [
         {
             "name": "WebSearch"
+        },
+        {
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+                {
+                    "url": "https://integrationsonline.sharepoint.com/sites/copilot-demo/Sightseeing"
+                }
+            ]
         }
     ]
 }

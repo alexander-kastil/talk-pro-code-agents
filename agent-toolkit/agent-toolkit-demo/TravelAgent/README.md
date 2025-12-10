@@ -1,55 +1,73 @@
-# Overview of the Declarative Agent template
+# Travel Agent
 
-With the declarative agent, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative agent can be used to create a grocery list based on a meal plan that you send to Copilot.
+Travel Agent is a declarative agent using the Microsoft Agent Toolkit to assist users in planning trips by providing recommendations on destinations, accommodations, and activities based on user preferences.
 
-## Get started with the template
+## Implementation
 
-> **Prerequisites**
->
-> To run this app template in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 18, 20, 22
-> - A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts).
-> - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
-> - [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
+- Using the Microsoft Agent Toolkit to create a declarative agent.
 
-![image](https://github.com/user-attachments/assets/51a221bb-a2c6-4dbf-8009-d2aa20a1638f)
+- Explain important files and folders in the project structure:
 
-1. First, select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Select `Preview Local in Copilot (Edge)` or `Preview Local in Copilot (Chrome)` from the launch configuration dropdown.
-4. Select your declarative agent from the `Copilot` app.
-5. Ask a question to your declarative agent and it should respond based on the instructions provided.
+  - manifest.json: Contains metadata about the agent, including its name, description, and capabilities.
+  - declarativeAgent.json: Defines the behavior and configurations of the travel agent.
+  - m365agents.yml: Provides deployment configurations for the agent.
 
-## What's included in the template
+- Point out instruction.txt file that contains the specific instructions given to the agent to guide its responses and actions.
 
-| Folder       | Contents                                                                                 |
-| ------------ | ---------------------------------------------------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                                                               |
-| `appPackage` | Templates for the application manifest, the GPT manifest and the API specification |
-| `env`        | Environment files                                                                        |
+- Add conversation starters to help users initiate interactions with the travel agent:
 
-The following files can be customized and demonstrate an example implementation to get you started.
+  ```
+  "conversation_starters": [
+    {
+        "title": "Vienna Trip",
+        "text": "Recommend places to visit in Vienna"
+    },
+    {
+        "title": "Lunch Options",
+        "text": "Recommend places for lunch near the Colosseum in Rome"
+    },
+    {
+        "title": "Currency Exchange",
+        "text": "I am coming from China. How much is 1000 CNY in EUR?"
+    }
+  ]
+  ```
 
-| File                               | Contents                                                                     |
-| ---------------------------------- | ---------------------------------------------------------------------------- |
-| `appPackage/declarativeAgent.json` | Define the behaviour and configurations of the declarative agent.            |
-| `appPackage/manifest.json`         | application manifest that defines metadata for your declarative agent. |
+- Run and deploy it using the Microsoft 365 Agents Toolkit:
 
-The following are Microsoft 365 Agents Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Microsoft 365 Agents Toolkit works.
+  - Use the `Provision` command to set up necessary resources.
+  - Use the `Preview Your App (F5)` command to test the agent in Copilot.
 
-| File           | Contents                                                                                                                                  |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `m365agents.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
+- Next we will use the Microsoft 365 Agents Toolkit MCP to be able to add some more advance configuration. In .vscode/mcp.json add:
 
-## Extend the template
+  ```
+  {
+      "servers": {
+          "M365AgentsToolkit Server": {
+              "command": "npx",
+              "args": [
+                  "-y",
+                  "@microsoft/m365agentstoolkit-mcp@latest",
+                  "server",
+                  "start"
+              ]
+          }
+      }
+  }
+  ```
 
-- [Add conversation starters](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=3): Conversation starters are hints that are displayed to the user to demonstrate how they can get started using the declarative agent.
-- [Add web content](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=4) for the ability to search web information.
-- [Add OneDrive and SharePoint content](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=5) as grounding knowledge for the agent.
-- [Add Microsoft Copilot connectors content](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=6) to ground agent with enterprise knowledge.
-- [Add API plugins](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=7) for agent to interact with REST APIs.
+- Add Web search capability to the agent by updating the declarativeAgent.json file:
 
-## Addition information and references
+  ```json
+  "capabilities": [
+      {
+          "name": "WebSearch"
+      }
+  ]
+  ```
 
-- [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
+  > Note: Point out the "capabilities": [] option
+
+- Now give me an overview about the capabilities. Provide a complete list of options and what functionality they provide.
+
+- I want to add this sharepoint library as knowledge https://integrationsonline.sharepoint.com/sites/copilot-demo/Sightseeing

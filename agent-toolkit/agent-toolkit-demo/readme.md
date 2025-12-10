@@ -38,4 +38,4 @@ Travel Agent is a declarative agent using the Microsoft Agent Toolkit to assist 
   - Use the `Provision` command to set up necessary resources.
   - Use the `Preview Your App (F5)` command to test the agent in Copilot.
 
-- Next we will
+- Next we will use the Microsoft 365 Agents Toolkit MCP to extend the Travel Agent by adding web content and API plugins to enhance its capabilities.
