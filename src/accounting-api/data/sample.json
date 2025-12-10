@@ -1,0 +1,148 @@
+{
+    "store": {
+        "name": "Billa AG",
+        "address": "3400 KLOSTERNEUBURG, AUFELDGASSE 45-49"
+    },
+    "receipt": {
+        "date": "2025-07-25"
+    },
+    "items": [
+        {
+            "name": "Billa Bio Zitronen 500g",
+            "price": 2.49
+        },
+        {
+            "name": "Ja! Bio Knoblauch 150g",
+            "price": 2.99
+        },
+        {
+            "name": "Ja!Bio RoggenPurWeck",
+            "price": 1.09
+        },
+        {
+            "name": "Ja! Bio Wachauer",
+            "price": 1.35
+        },
+        {
+            "name": "Ja! Nat.Bio Heumilch",
+            "price": 1.99
+        },
+        {
+            "name": "Ja! Bio Butter",
+            "weight_kg": 1.598,
+            "unit_price": 4.99,
+            "price": 7.97
+        },
+        {
+            "name": "Clever Poularde",
+            "weight_kg": 0.359,
+            "unit_price": 10.99,
+            "price": 3.95
+        },
+        {
+            "name": "FzT Putenleber",
+            "weight_kg": 0.379,
+            "unit_price": 31.99,
+            "price": 12.12
+        },
+        {
+            "name": "Ja! H-Filet",
+            "weight_kg": 0.604,
+            "unit_price": 37.99,
+            "price": 22.95
+        },
+        {
+            "name": "Ja! Leber Halbiert Kalb",
+            "price": 1.29
+        },
+        {
+            "name": "Billa Bio Bourbon Vanille",
+            "price": 8.99
+        },
+        {
+            "name": "Ja Nat. Kaffee",
+            "price": 2.99
+        },
+        {
+            "name": "4 D Thunfisch m.Gemü",
+            "price": 2.99
+        },
+        {
+            "name": "VDiam.Thunf.scharf",
+            "price": 2.99
+        },
+        {
+            "name": "4 D Thunfisch m.Gemü",
+            "quantity": 2,
+            "price": 5.98
+        },
+        {
+            "name": "VDiam.Thunf.scharf",
+            "quantity": 2,
+            "price": 5.98
+        },
+        {
+            "name": "Äpp-only Pickerl",
+            "price": 0.00
+        },
+        {
+            "name": "Billa Groß Papiertasche",
+            "price": 0.50
+        },
+        {
+            "name": "MOWI Rote Bete Lachs",
+            "price": 5.99,
+            "discount": -1.80
+        },
+        {
+            "name": "MOWI Rote Bete Lachs",
+            "price": 5.99,
+            "discount": -1.80
+        }
+    ],
+    "discounts": [
+        {
+            "type": "HEUTE GESPART",
+            "amount": 22.41
+        },
+        {
+            "type": "Fleisch Rabatt 25%",
+            "amount": -9.76
+        },
+        {
+            "type": "Kaffee-Rabatt 25%",
+            "amount": -2.25
+        },
+        {
+            "type": "Pickerl Marke Bio 25%",
+            "amount": -0.80
+        },
+        {
+            "type": "GRATIS AKTION",
+            "amount": -1.00
+        },
+        {
+            "type": "GRATIS AKTION",
+            "amount": -1.00
+        },
+        {
+            "type": "GRATIS AKTION",
+            "amount": -2.00
+        },
+        {
+            "type": "GRATIS AKTION",
+            "amount": -2.00
+        },
+        {
+            "type": "Preiskorrektur 30%",
+            "amount": -1.80
+        },
+        {
+            "type": "Preiskorrektur 30%",
+            "amount": -1.80
+        }
+    ],
+    "totals": {
+        "total": 78.38
+    }
+}

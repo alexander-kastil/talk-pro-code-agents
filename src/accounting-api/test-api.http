@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:5186
+
+### Add Invoice (POST)
+POST {{baseUrl}}/invoices
+Content-Type: application/json
+
+{
+  "store": {
+    "name": "Billa AG",
+    "address": "3400 KLOSTERNEUBURG, AUFELDGASSE 45-49"
+  },
+  "receiptInfo": {
+    "date": "2025-07-25"
+  },
+  "items": [
+    {
+      "name": "Billa Bio Zitronen 500g",
+      "price": 2.49
+    },
+    {
+      "name": "Ja! Bio Knoblauch 150g",
+      "price": 2.99
+    },
+    {
+      "name": "Ja!Bio RoggenPurWeck",
+      "price": 1.09
+    }
+  ],
+  "totals": {
+    "total": 6.57
+  }
+}
+
+### Get All Invoices (GET)
+GET {{baseUrl}}/invoices

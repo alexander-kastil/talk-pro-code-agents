@@ -1,0 +1,10 @@
+grp=rg-pro-code-agents
+loc=westeurope
+plan=pro-code-agents-plan
+
+az group create -n $grp -l $loc
+az appservice plan create -n $plan -g $grp --sku F1
+
+cd accounting-api
+az webapp up -n accounting-api-$RANDOM -g $grp -p $plan -l $loc -r "dotnet:9"
+cd ..
