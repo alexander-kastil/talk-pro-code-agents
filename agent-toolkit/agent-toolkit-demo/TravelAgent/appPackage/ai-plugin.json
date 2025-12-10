@@ -10,15 +10,7 @@
     "functions": [
         {
             "name": "convertCurrency",
-            "description": "Convert an amount from one currency to another using current or historical exchange rates",
-            "capabilities": {
-                "response_semantics": {
-                    "data_path": "$",
-                    "static_template": {
-                        "file": "./adaptiveCards/convertCurrency.json"
-                    }
-                }
-            }
+            "description": "Convert an amount from one currency to another using current or historical exchange rates"
         }
     ],
     "runtimes": [

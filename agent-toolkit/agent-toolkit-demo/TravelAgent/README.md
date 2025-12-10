@@ -94,3 +94,16 @@ AGENT_SCOPE=personal
 ```
 
 - Before we will test we will enable the debug mode: `-developer on` in Copilot chat.
+
+- Test the agent and notice the adaptive card. Delete it in ai-plugin.json:
+
+  ```json
+  "capabilities": {
+      "response_semantics": {
+          "data_path": "$",
+          "static_template": {
+              "file": "./adaptiveCards/convertCurrency.json"
+          }
+      }
+  }
+  ```

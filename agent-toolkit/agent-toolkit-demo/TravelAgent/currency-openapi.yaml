@@ -3,9 +3,6 @@ info:
   title: Currency Converter API
   description: Convert currency amounts using real-time exchange rates via Fixer.io
   version: 1.0.0
-  contact:
-    name: Currency Converter
-    url: https://github.com/your-repo
 
 servers:
   - url: https://pro-code-currency-converter.azurewebsites.net
