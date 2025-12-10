@@ -1,0 +1,26 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+    "version": "v1.5",
+    "name": "TravelAgent${{APP_NAME_SUFFIX}}",
+    "description": "Declarative agent created with Microsoft 365 Agents Toolkit",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Vienna Trip",
+            "text": "Recommend places to visit in Vienna"
+        },
+        {
+            "title": "Lunch Options",
+            "text": "Recommend places for lunch near the Colosseum in Rome"
+        },
+        {
+            "title": "Currency Exchange",
+            "text": "I am coming from China. How much is 1000 CNY in EUR?"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "WebSearch"
+        }
+    ]
+}
