@@ -16,6 +16,9 @@
         {
             "title": "Currency Exchange",
             "text": "I am coming from China. How much is 1000 CNY in EUR?"
+        },
+        {
+            "text": "Convert currency amount"
         }
     ],
     "capabilities": [
@@ -29,6 +32,12 @@
                     "url": "https://integrationsonline.sharepoint.com/sites/copilot-demo/Sightseeing"
                 }
             ]
+        }
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
         }
     ]
 }

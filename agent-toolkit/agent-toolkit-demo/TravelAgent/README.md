@@ -84,3 +84,13 @@ Travel Agent is a declarative agent using the Microsoft Agent Toolkit to assist 
     ]
 }
 ```
+
+- Next we will add an action to support currency conversion. Use `currency-openapi.yml` to "Add an action" in the declarativeAgent.json file.
+
+- In order to bypass any approval we set .env.dev to personal scope:
+
+```
+AGENT_SCOPE=personal
+```
+
+- Before we will test we will enable the debug mode: `-developer on` in Copilot chat.

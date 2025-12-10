@@ -1,0 +1,38 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
+    "schema_version": "v2.3",
+    "name_for_human": "Currency Converter API",
+    "description_for_human": "Convert currency amounts using real-time exchange rates via Fixer.io",
+    "description_for_model": "Convert currency amounts using real-time exchange rates via Fixer.io",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "travelagent",
+    "capabilities": {},
+    "functions": [
+        {
+            "name": "convertCurrency",
+            "description": "Convert an amount from one currency to another using current or historical exchange rates",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "static_template": {
+                        "file": "./adaptiveCards/convertCurrency.json"
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "convertCurrency"
+            ]
+        }
+    ]
+}
