@@ -3,14 +3,9 @@ info:
   title: Currency Converter API
   description: Convert currency amounts using real-time exchange rates via Fixer.io
   version: 1.0.0
-  contact:
-    name: Currency Converter
-    url: https://github.com/your-repo
 
 servers:
-  - url: http://localhost:7071
-    description: Local Azure Functions development server
-  - url: https://your-function-app.azurewebsites.net
+  - url: https://pro-code-currency-converter.azurewebsites.net
     description: Production Azure Functions
 
 paths:
@@ -55,7 +50,7 @@ paths:
                   example: 2025-07-25
                   format: date
       responses:
-        '200':
+        "200":
           description: Successful currency conversion
           content:
             application/json:
@@ -86,7 +81,7 @@ paths:
                     type: string
                     description: Exchange rate date
                     example: 2025-07-25
-        '400':
+        "400":
           description: Bad request - missing or invalid parameters
           content:
             application/json:
@@ -96,8 +91,8 @@ paths:
                   error:
                     type: string
                     description: Error message
-                    example: Missing or invalid parameters. Required: from, to, amount
-        '401':
+                    example: "Missing or invalid parameters. Required: from, to, amount"
+        "401":
           description: Unauthorized - missing or invalid API key
           content:
             application/json:
@@ -108,7 +103,7 @@ paths:
                     type: string
                     description: Error message
                     example: API key not configured
-        '500':
+        "500":
           description: Internal server error
           content:
             application/json:
