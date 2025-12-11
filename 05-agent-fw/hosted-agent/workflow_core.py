@@ -17,21 +17,19 @@ def get_credential():
 async def create_agent(chat_client: AzureAIAgentClient, as_agent: bool = True):
     writer = chat_client.create_agent(
         name="Writer",
-        instructions="You are an excellent content writer. You create new content and edit contents based on the feedback.",
+        instructions="You are an excellent content writer. Create an up to 10 sentence story about the love between a dog and his owner in German.",
     )
 
-    reviewer = chat_client.create_agent(
-        name="Reviewer",
+    translator = chat_client.create_agent(
+        name="Translator",
         instructions=(
-            "You are an excellent content reviewer. "
-            "Provide actionable feedback to the writer about the provided content. "
-            "Provide the feedback in the most concise manner possible."
+            "You are an excellent content translator. Translate the story from German to English."
         ),
     )
 
     # Build the workflow by adding agents directly as edges.
     workflow = (
-        WorkflowBuilder().set_start_executor(writer).add_edge(writer, reviewer).build()
+        WorkflowBuilder().set_start_executor(writer).add_edge(writer, translator).build()
     )
 
     return workflow.as_agent() if as_agent else workflow

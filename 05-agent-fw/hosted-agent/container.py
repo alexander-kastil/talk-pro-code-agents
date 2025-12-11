@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 from agent_framework.azure import AzureAIAgentClient
 from agent_framework.observability import setup_observability
@@ -19,9 +20,11 @@ async def main() -> None:
     - AZURE_AI_MODEL_DEPLOYMENT_NAME: Your Microsoft Foundry model deployment name
     """
 
-    # Initialize observability for visualization.
-    # Set enable_sensitive_data to True to include sensitive information such as prompts and responses.
-    setup_observability(vs_code_extension_port=4319, enable_sensitive_data=False)
+    # Initialize observability only when explicitly enabled.
+    # Set ENABLE_TRACING=true to export to a local collector (default VS Code port 4319).
+    if os.getenv("ENABLE_TRACING", "").strip().lower() in ("1", "true", "yes", "on"):
+        port = int(os.getenv("OTEL_COLLECTOR_PORT", "4319"))
+        setup_observability(vs_code_extension_port=port, enable_sensitive_data=False)
 
     async with get_credential() as credential:
         async with AzureAIAgentClient(async_credential=credential) as chat_client:
