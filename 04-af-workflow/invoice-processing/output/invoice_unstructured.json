@@ -1,0 +1,22 @@
+{
+  "invoice": {
+    "date": "06.11.2025",
+    "recipient": {
+      "name": "Alexander Kastl",
+      "customer_number": "9188741937",
+      "telephone": "0677/2000"
+    },
+    "payment_methods": {
+      "payment_due": "11.12.2025"
+    },
+    "total_amount": {
+      "gross_total": "56,58",
+      "net_total": "56,58",
+      "tax_detail": {
+        "description": "Rechnungssbetrag nach Steuern",
+        "amount": "56,58"
+      }
+    },
+    "note": "Wir haben unsere Datenschutzbestimmungen aktualisiert. Die aktuelle Version finden Sie unter www.magen-ta.at/datenschutz."
+  }
+}
