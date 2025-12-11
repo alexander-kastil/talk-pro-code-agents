@@ -1,0 +1,44 @@
+================================================================================
+                               TechServices Inc.                                
+                      123 Business St, Tech City, TC 12345                      
+================================================================================
+
+INVOICE: INV-002
+Date: 2025-10-02
+
+Bill To:
+  Global Tech Ltd
+  accounts@globaltech.com
+
+--------------------------------------------------------------------------------
+DESCRIPTION                              QTY        PRICE                    AMOUNT
+--------------------------------------------------------------------------------
+Cloud Infrastructure Setup               20         $200.00         $       4000.00
+
+Subtotal:                                                         $       4000.00
+Tax (10%):                                                        $        400.00
+--------------------------------------------------------------------------------
+TOTAL DUE:                                                        $       4400.00
+================================================================================
+
+Thank you for your business!
+
+CREDIT CHECK RESULTS:
+====================
+Status: APPROVED
+Credit Score: 650
+Credit Limit: $10,000.00
+Risk Level: MEDIUM
+Invoice Amount: $4,000.00
+Available Credit: $6,000.00
+Check Date: 2024-12-09T10:30:00Z
+
+
+CLIENT INFORMATION:
+==================
+Name: Global Tech Ltd
+Email: accounts@globaltech.com
+Status: Standard
+Account Manager: AM-GLO
+Last Order: 2024-11-15
+
