@@ -1,4 +1,4 @@
-# Travel Agent
+# Microsoft 365 Agent Toolkit - Travel Agent
 
 Travel Agent is a declarative agent using the Microsoft Agent Toolkit to assist users in planning trips by providing recommendations on destinations, accommodations, and activities based on user preferences.
 
@@ -38,4 +38,72 @@ Travel Agent is a declarative agent using the Microsoft Agent Toolkit to assist 
   - Use the `Provision` command to set up necessary resources.
   - Use the `Preview Your App (F5)` command to test the agent in Copilot.
 
-- Next we will use the Microsoft 365 Agents Toolkit MCP to extend the Travel Agent by adding web content and API plugins to enhance its capabilities.
+- Next we will use the Microsoft 365 Agents Toolkit MCP to be able to add some more advance configuration. In .vscode/mcp.json add:
+
+  ```json
+  {
+      "servers": {
+          "M365AgentsToolkit Server": {
+              "command": "npx",
+              "args": [
+                  "-y",
+                  "@microsoft/m365agentstoolkit-mcp@latest",
+                  "server",
+                  "start"
+              ]
+          }
+      }
+  }
+  ```
+
+- Add Web search capability to the agent by updating the declarativeAgent.json file:
+
+  ```json
+  "capabilities": [
+      {
+          "name": "WebSearch"
+      }
+  ]
+  ```
+
+  > Note: Point out the "capabilities": [] option
+
+- Now give me an overview about the capabilities. Provide a complete list of options and what functionality they provide.
+
+- I want to add this sharepoint library as knowledge https://integrationsonline.sharepoint.com/sites/copilot-demo/Sightseeing
+
+> Note: Should add the following to declarativeAgent.json
+
+```json
+{
+    "name": "OneDriveAndSharePoint",
+    "items_by_url": [
+        {
+            "url": "https://integrationsonline.sharepoint.com/sites/copilot-demo/Sightseeing"
+        }
+    ]
+}
+```
+
+- Next we will add an action to support currency conversion. Use `currency-openapi.yml` to "Add an action" in the declarativeAgent.json file.
+
+- In order to bypass any approval we set .env.dev to personal scope:
+
+```
+AGENT_SCOPE=personal
+```
+
+- Before we will test we will enable the debug mode: `-developer on` in Copilot chat.
+
+- Test the agent and notice the adaptive card. Delete it in ai-plugin.json:
+
+  ```json
+  "capabilities": {
+      "response_semantics": {
+          "data_path": "$",
+          "static_template": {
+              "file": "./adaptiveCards/convertCurrency.json"
+          }
+      }
+  }
+  ```
