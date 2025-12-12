@@ -6,6 +6,14 @@ These SDKs support multiple programming languages and offer seamless integration
 
 Available in Python and .NET
 
+## Agent Types
+
+Microsoft Foundry supports various agent types, including:
+
+- Prompt-based Agents: Agents that use natural language prompts to interact with users and perform tasks.
+- Workflow Agents: Agents that orchestrate multi-step processes using predefined workflows.
+- Hosted Agents: Containerized agents that run on the Foundry Agent Service with managed scaling and observability.
+
 ## Python SDK Sample
 
 Azure Identity 1.26.0b1 provides DefaultAzureCredential so the agent can authenticate with Managed Identity or local credentials without hard-coding secrets.
