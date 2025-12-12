@@ -1,4 +1,12 @@
-# Coded Agent using Python SDK
+# Microsoft Foundry SDKs
+
+Microsoft Foundry SDKs provide libraries and tools to build, deploy, and manage AI-powered agents using Microsoft Foundry services.
+
+These SDKs support multiple programming languages and offer seamless integration with Microsoft Foundry capabilities.
+
+Available in Python and .NET
+
+## Python SDK Sample
 
 Azure Identity 1.26.0b1 provides DefaultAzureCredential so the agent can authenticate with Managed Identity or local credentials without hard-coding secrets.
 

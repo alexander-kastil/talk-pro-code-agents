@@ -35,10 +35,6 @@ If found, summarize and recommend based on those resources.
 If not found, provide general travel suggestions but note that SharePoint had no relevant data.
 ```
 
-### Upgrading Azure AI Foundry Agents
-
-Upgrading an Agent from
-
 ## Microsoft Foundry Extension
 
 [Microsoft Foundry Extension](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.vscode-ai-foundry)
